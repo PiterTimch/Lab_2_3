@@ -18,25 +18,25 @@ namespace Lab_2_3
 
 	public class Vertebrates
 	{
-	public Point Gender { get; set; }
+		public Point Gender { get; set; }
 		public string Name { get; set; }
 		public double PopulationRating { get; set; }
 
-	public Vertebrates(Point gender, string name, double populationRating)
+		public Vertebrates(Point gender, string name, double populationRating)
 		{
 			Gender = gender;
 			Name = name;
 			PopulationRating = populationRating;
 		}
 
-	public Vertebrates()
-	{
-		Gender = Point.Female;
-		Name = "Unknown";
-		PopulationRating = 0.0;
-	}
+		public Vertebrates()
+		{
+			Gender = Point.Female;
+			Name = "Unknown";
+			PopulationRating = 0.0;
+		}
 
-	public override string ToString()
+		public override string ToString()
 		{
 			return $"Name: {Name}, Point: {Gender}, PopulationRating: {PopulationRating:F2}";
 		}
