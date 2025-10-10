@@ -17,7 +17,7 @@ namespace Lab_2_3
 		Pisces,
 		Beasts,
 		Birds
-	}
+    }
 
 	public class Vertebrates
 	{
