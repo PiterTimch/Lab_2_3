@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace Lab_2_3
 {
-	public enum Point { Female = 0, Male = 1 }
+	public enum Point { 
+		Female, 
+		Male 
+	}
 
 	public enum Animals
 	{
@@ -146,7 +149,7 @@ namespace Lab_2_3
 			return sb.ToString();
 		}
 
-		public virtual string ToShortString()
+		public string ToShortString()
 		{
 			return $"Group: {_groupName}, Subgroup: {_subgroup}, Habitat: {_habitat}, Researched species: {_researchedSpeciesCount}, Avg rating: {AveragePopulationRating:F2}";
 		}
@@ -183,13 +186,13 @@ namespace Lab_2_3
 			Console.WriteLine(classification.ToString());
 
 			const int dimension = 600;
-			int total = dimension * dimension;
+			const int total = dimension * dimension;
 
-			var sample = new Vertebrates(Point.Male, "Sample", 50.0);
+			var testAnimal = new Vertebrates(Point.Male, "testAnimal", 50.0);
 
 			var arr1D = new Vertebrates[total];
 			var sw = Stopwatch.StartNew();
-			for (int i = 0; i < arr1D.Length; i++) arr1D[i] = sample;
+			for (int i = 0; i < arr1D.Length; i++) arr1D[i] = testAnimal;
 			double sum1 = 0;
 			for (int i = 0; i < arr1D.Length; i++) sum1 += arr1D[i].PopulationRating;
 			sw.Stop();
@@ -199,7 +202,7 @@ namespace Lab_2_3
 			sw.Restart();
 			for (int i = 0; i < dimension; i++)
 				for (int j = 0; j < dimension; j++)
-					arr2D[i, j] = sample;
+					arr2D[i, j] = testAnimal;
 			double sum2 = 0;
 			for (int i = 0; i < dimension; i++)
 				for (int j = 0; j < dimension; j++)
@@ -212,7 +215,7 @@ namespace Lab_2_3
 			for (int i = 0; i < dimension; i++) arrJagged[i] = new Vertebrates[dimension];
 			for (int i = 0; i < dimension; i++)
 				for (int j = 0; j < dimension; j++)
-					arrJagged[i][j] = sample;
+					arrJagged[i][j] = testAnimal;
 			double sum3 = 0;
 			for (int i = 0; i < dimension; i++)
 				for (int j = 0; j < dimension; j++)
