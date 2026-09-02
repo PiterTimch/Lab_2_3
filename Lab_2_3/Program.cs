@@ -221,6 +221,7 @@ namespace Lab_2_3
 				for (int j = 0; j < dimension; j++)
 					sum3 += arrJagged[i][j].PopulationRating;
 			sw.Stop();
+			
 			Console.WriteLine($"2D jagged: elements={total}, time={sw.ElapsedMilliseconds} ms, sum={sum3}");
 
 			Console.WriteLine("\nPress any key to exit...");
